@@ -2,8 +2,29 @@
 
 {% block conteudo %}
 
-    <h1>esse é o index</h1>
+{% include 'shared/lista.html' %}
+<h1>esse é o index</h1>
+<section action="/" method="POST">
 
-    {% include 'shared/lista.html' %}
+    {% csrf_token %}
+    <label>Nome</label>
+        <input type="text" name="nome" id="">
+    
+    <label>Sobrenome</label>
+        <input type="text" name="sobrenome" id="">
+
+    <label>E-mail</label>
+        <input type="text" name="email" id="">
+
+    <label>Gênero</label>
+        <select name="genero">
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="O">Outro</option>
+        </select>
+    <input type="submit" value="Cadastrar">
+</section>
+
+
 
 {% endblock %}
